@@ -1,8 +1,8 @@
-[] Criar Formulario
-[] Criar botão
-[] Colocar evento de click no botão para rodar a função
-    - [] Pegar valores do input com a função
-    - [] Montar um objeto com os valores
+[x] Criar Formulario
+[x] Criar botão
+[x] Colocar evento de click no botão para rodar a função
+    - [x] Pegar valores do input com a função
+    - [x] Montar um objeto com os valores
     - [] Converter em String
     - [] Gravar 
 [] Listar as Tarefas

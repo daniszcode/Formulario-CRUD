@@ -10,7 +10,9 @@ function saveTask(){
         name, // poderia ser usado name:name, mas como tem o nome da mesma variavel (name), pode ser usado a virgula no lugar
         done: false
     };
-    //console.log(task)
+    const taksString = JSON.stringify(task); // transforma o array/objeto em string
+    //console.log(taksString)
+    localStorage.setItem("list", taksString)
 }
 
 
