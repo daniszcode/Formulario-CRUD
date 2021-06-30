@@ -10,10 +10,23 @@ function saveTask(){
         name, // poderia ser usado name:name, mas como tem o nome da mesma variavel (name), pode ser usado a virgula no lugar
         done: false
     };
-    const taksString = JSON.stringify(task); // transforma o array/objeto em string
-    //console.log(taksString)
-    localStorage.setItem("list", taksString)
+    addTaskStorage(task);
 }
 
+function addTaskStorage(task) {
+    //console.log(taksString)
+    const tasks = getTasksStorage(task);
+    const tasksWithNewItem = [...tasks, task] // tasksWithNewItem recebe um array contendo todas as tasks já convertidas em objeto e listadas dentro de um array (...tasks) && a ultima task adicionada na lista dentro desse mesmo array
+    const tasksString = JSON.stringify(tasksWithNewItem); // transforma o array/objeto em string para ser lida no console e manipulada para aparecer na tela
+    console.log(tasksString)
+    localStorage.setItem("list", tasksString);
+}
 
-
+function getTasksStorage() {
+    const tasksString = localStorage.getItem("list"); // pegar itens da lista (tasks) e listar como um array
+    const tasks = JSON.parse(tasksString); // converte a strig em objeto  para ser lida no localStorage 
+    if (!tasks) {
+        return [] //Se não houver nenhuma task listada, retorne um array vazio, para salvar e criar a lista de objetos
+    }
+    return tasks;
+}

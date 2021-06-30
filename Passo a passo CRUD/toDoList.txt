@@ -3,9 +3,9 @@
 [x] Colocar evento de click no botão para rodar a função
     - [x] Pegar valores do input com a função
     - [x] Montar um objeto com os valores
-    - [] Converter em String
-    - [] Gravar 
-[] Listar as Tarefas
+    - [x] Converter em String
+    - [x] Gravar 
+[x] Listar as Tarefas
 [] Apagar Tarefas
     - [] Adicionar botão 'Remover' em cada item
     - [] Adicionar evento de click no botão para implementar funcionalidade de remoção
