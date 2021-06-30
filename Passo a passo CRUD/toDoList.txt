@@ -1,0 +1,14 @@
+[] Criar Formulario
+[] Criar botão
+[] Colocar evento de click no botão para rodar a função
+    - [] Pegar valores do input com a função
+    - [] Montar um objeto com os valores
+    - [] Converter em String
+    - [] Gravar 
+[] Listar as Tarefas
+[] Apagar Tarefas
+    - [] Adicionar botão 'Remover' em cada item
+    - [] Adicionar evento de click no botão para implementar funcionalidade de remoção
+        - [] Recuperar lista     
+        - [] Remover item da lista
+        - [] Gravar lista alterada
