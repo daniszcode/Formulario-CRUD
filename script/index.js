@@ -1,7 +1,10 @@
 document.querySelector("#form").addEventListener('submit', event => {
-event.preventDefault();
-saveTask();
+    event.preventDefault();
+    saveTask();
 }); // esta linha de codigo faz com que o button tipo submit rode a função saveTask(), sem necessidade do onclick (substituido pelo addeventlistener(submit))
+
+const listElement = document.querySelector('ul'); // tag ul será usada para tabelar a lista no HTML
+
 
 function saveTask(){
     const name = document.querySelector("#name").value;
@@ -31,12 +34,20 @@ function getTasksStorage() {
     return tasks;
 }
 
-function listElement() {
-    const list = document.querySelector('ul');
-}
 
+function makeItem(task) {
+    return `
+            <li>${task.name}</li>
+    `
+
+}
 function drawList() {
-    const task = getTasksStorage();
-    console.log(task)
+    const tasks = getTasksStorage();
+    let item = '';
+    tasks.forEach(task => {
+        item += makeItem(task);
+    });
+    
+    console.log(item)
 }
 drawList()
