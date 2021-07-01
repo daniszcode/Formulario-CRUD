@@ -23,7 +23,7 @@ function addTaskStorage(task) {
 }
 
 function getTasksStorage() {
-    const tasksString = localStorage.getItem("list"); // pegar itens da lista (tasks) e listar como um array
+    const tasksString = localStorage.getItem("list"); // pegar/capturar lista inteira "list"
     const tasks = JSON.parse(tasksString); // converte a strig em objeto para ser usada no Javascript
     if (!tasks) {
         return [] //Se não houver nenhuma task listada, retorne um array vazio, para salvar e criar a lista de objetos

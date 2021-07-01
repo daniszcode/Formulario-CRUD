@@ -5,7 +5,9 @@
     - [x] Montar um objeto com os valores
     - [x] Converter em String
     - [x] Gravar 
-[x] Listar as Tarefas
+ Listar as Tarefas
+    - [x] Capturar lista
+    - [x] Montar lista
 [] Apagar Tarefas
     - [] Adicionar botão 'Remover' em cada item
     - [] Adicionar evento de click no botão para implementar funcionalidade de remoção
