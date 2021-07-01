@@ -10,8 +10,22 @@ export function addTaskStorage(task, draw) {
     //console.log(taksString)
     const tasks = getTasksStorage(task);
     const tasksWithNewItem = [...tasks, task] // tasksWithNewItem recebe um array contendo todas as tasks já convertidas em objeto e listadas dentro de um array (...tasks) && a ultima task adicionada na lista dentro desse mesmo array
-    const tasksString = JSON.stringify(tasksWithNewItem); // transforma o array/objeto em string para ser lida no localStorage(só recebe String) e manipulada para aparecer na tela
-    console.log(tasksString)
-    localStorage.setItem("list", tasksString);
-    draw() //transformou a chamada da função em um parametro, para ela rodar sem precisar ser exportada
+    saveTaskStorage(tasksWithNewItem, draw)
+
+}
+
+export function removeTaskStorage(taskName, draw) {
+
+
+    const tasks = getTasksStorage();     //capturar lista
+    const taskToKeep = tasks.filter((task) => task.name !== taskName);     //remover o item da lista, utilizando o nome
+    //console.log(taskToKeep);
+    saveTaskStorage(taskToKeep, draw)
+
+}
+
+function saveTaskStorage(tasks, draw) {
+    const tasksString = JSON.stringify(tasks); // transforma o array/objeto em string para ser lida no localStorage(só recebe String) e manipulada para aparecer na tela
+    localStorage.setItem("list", tasksString);   // gravar lista alterada
+    draw(); //transformou a chamada da função em um parametro, para ela rodar sem precisar ser exportada
 }
