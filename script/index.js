@@ -23,6 +23,7 @@ function addTaskStorage(task) {
     const tasksString = JSON.stringify(tasksWithNewItem); // transforma o array/objeto em string para ser lida no localStorage(só recebe String) e manipulada para aparecer na tela
     console.log(tasksString)
     localStorage.setItem("list", tasksString);
+    drawList()
 }
 
 function getTasksStorage() {
@@ -47,7 +48,7 @@ function drawList() {
     tasks.forEach(task => {
         item += makeItem(task);
     });
-    
-    console.log(item)
+    listElement.innerHTML = item
+    //console.log(item)
 }
-drawList()
+
