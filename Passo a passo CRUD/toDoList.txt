@@ -8,9 +8,9 @@
  Listar as Tarefas
     - [x] Capturar lista
     - [x] Montar lista
-[] Apagar Tarefas
-    - [] Adicionar botão 'Remover' em cada item
-    - [] Adicionar evento de click no botão para implementar funcionalidade de remoção
-        - [] Recuperar lista     
-        - [] Remover item da lista
-        - [] Gravar lista alterada
+[x] Apagar Tarefas
+    - [x] Adicionar botão 'Remover' em cada item
+    - [x] Adicionar evento de click no botão para implementar funcionalidade de remoção
+        - [x] Recuperar lista     
+        - [x] Remover item da lista
+        - [x] Gravar lista alterada
