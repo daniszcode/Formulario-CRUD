@@ -30,3 +30,13 @@ function getTasksStorage() {
     }
     return tasks;
 }
+
+function listElement() {
+    const list = document.querySelector('ul');
+}
+
+function drawList() {
+    const task = getTasksStorage();
+    console.log(task)
+}
+drawList()
