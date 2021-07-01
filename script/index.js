@@ -1,3 +1,4 @@
+import { addTaskStorage, getTasksStorage } from "./repository.js";
 
 document.querySelector("#form").addEventListener('submit', event => {
     event.preventDefault();
@@ -13,28 +14,9 @@ function saveTask(){
             name, // poderia ser usado name:name, mas como tem o nome da mesma variavel (name), pode ser usado a virgula no lugar
             done: false
         };
-        addTaskStorage(task);
+        addTaskStorage(task, drawList);
     }
     
-    function addTaskStorage(task) {
-        //console.log(taksString)
-        const tasks = getTasksStorage(task);
-        const tasksWithNewItem = [...tasks, task] // tasksWithNewItem recebe um array contendo todas as tasks já convertidas em objeto e listadas dentro de um array (...tasks) && a ultima task adicionada na lista dentro desse mesmo array
-        const tasksString = JSON.stringify(tasksWithNewItem); // transforma o array/objeto em string para ser lida no localStorage(só recebe String) e manipulada para aparecer na tela
-        console.log(tasksString)
-        localStorage.setItem("list", tasksString);
-        drawList()
-    }
-    
-    function getTasksStorage() {
-        const tasksString = localStorage.getItem("list"); // pegar/capturar lista inteira "list"
-        const tasks = JSON.parse(tasksString); // converte a strig em objeto para ser usada no Javascript
-        if (!tasks) {
-            return [] //Se não houver nenhuma task listada, retorne um array vazio, para salvar e criar a lista de objetos
-        }
-        return tasks;
-    }
-
     function makeItem(item) {
         return `
             <li> ${item.name}</li>
